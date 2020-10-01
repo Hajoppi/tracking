@@ -1,0 +1,246 @@
+.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+
+  .modal-body {
+    color: black;
+
+    h5 {
+      &:nth-of-type(2) {
+        text-align: center;
+      }
+    }
+  }
+
+  .modal-header {
+    height: 4rem;
+  }
+
+  .btn {
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+
+    &:disabled {
+      color: #ffffff42;
+    }
+  }
+}
+
+.logo {
+  background-color: rgba(235, 200, 222, 0.1);
+  // background-color: rgba($pink, 0.1);
+  border: 4px solid $white;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  z-index: 10;
+  position: relative;
+  width: 9rem;
+  height: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.error {
+  color: $orange;
+  margin: 20px;
+}
+
+.noMatch {
+  color: $orange;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  align-self: flex-start;
+}
+
+$particleSize: 20vmin;
+$animationDuration: 30s;
+$amount: 20;
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  background: $purple;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+
+  span {
+    transition: all 2s ease-in-out;
+    z-index: 0;
+    width: $particleSize;
+    height: $particleSize;
+    border-radius: $particleSize;
+    backface-visibility: hidden;
+    position: absolute;
+    animation-name: bokeh;
+    animation-duration: $animationDuration;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    $colors: (#8869b3, #e45a84, #ffacac);
+    @for $i from 1 through $amount {
+      &:nth-child(#{$i}) {
+        color: nth($colors, random(length($colors)));
+        top: random(100) * 1%;
+        left: random(100) * 1%;
+        animation-duration: (random($animationDuration * 10) / 10) * 1s + 10s;
+        animation-delay: random(($animationDuration + 10s) * 10) / 10 * -1s;
+        transform-origin: (random(50) - 25) * 1vw (random(50) - 25) * 1vh;
+        $blurRadius: (random() + 0.5) * $particleSize * 0.5;
+        $x: if(random() > 0.5, -1, 1);
+        box-shadow: ($particleSize * 2 * $x) 0 $blurRadius currentColor;
+      }
+    }
+  }
+}
+
+@keyframes bokeh {
+  100% {
+    transform: translate3d(0, 0, 1px) rotate(360deg);
+  }
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $white;
+  // height: 100%;
+  padding: 2rem;
+
+  // background-color: #000;
+  background: transparent;
+
+  .register-header {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .register {
+    margin-top: 2rem;
+    text-align: center;
+    a {
+      color: white;
+    }
+
+    &.what-is {
+      cursor: pointer;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  max-width: 500px;
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+
+    &:first-of-type {
+      margin-bottom: 1.5rem;
+    }
+
+    .randomize {
+      margin: 5px;
+      cursor: pointer;
+      align-self: flex-end;
+      text-decoration: underline;
+    }
+
+    .label {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      margin-bottom: 5px;
+    }
+
+    .input {
+      color: $white;
+      box-sizing: border-box;
+      outline: none;
+      width: 100%;
+      padding: 0.6rem 1rem;
+      border-radius: 1.5rem;
+      border: 1px solid $white;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .association-chooser {
+      width: 100%;
+      line-height: 1;
+      color: $white;
+      box-sizing: border-box;
+      outline: none;
+      width: 100%;
+      padding: 0.2rem 1rem;
+      border-radius: 1.5rem;
+      border: 1px solid $white;
+      background-color: rgba(255, 255, 255, 0.1);
+
+      input {
+        color: $white;
+      }
+
+      .vs__dropdown-toggle {
+        border: none;
+      }
+
+      .vs__search::placeholder {
+        font-size: 0.8rem;
+        color: $white;
+      }
+
+      .vs__open-indicator {
+        fill: $white;
+      }
+
+      .vs__dropdown-menu {
+        color: $black;
+      }
+    }
+
+    .association-chooser-safari {
+      @extend .association-chooser;
+      input {
+        color: $black;
+      }
+    }
+
+    .disclaimer {
+      padding: 5px;
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+  }
+
+  .accept-field {
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    width: 100%;
+
+    .accept {
+      margin: 1rem;
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+}

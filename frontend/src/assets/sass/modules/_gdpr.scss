@@ -1,0 +1,40 @@
+.select-btn {
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin: 0.5rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    p {
+      margin: 0.5rem;
+    }
+  }
+}
+
+.btn-underline {
+  border: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.35s ease-in-out;
+  cursor: pointer;
+  background-color: white;
+
+  &.active {
+    border-bottom: 1px solid $purple;
+  }
+
+  &:hover {
+    border-bottom: 1px solid $purple;
+  }
+}
+
+.gdpr-toc {
+  z-index: 100;
+  .text {
+    padding: 2rem 2rem;
+    transition: all 0.35s ease-in-out;
+  }
+}

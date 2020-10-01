@@ -1,0 +1,52 @@
+.report-post-main {
+  position: fixed;
+  height: calc(100% - #{$navbar-height});
+  width: 100%;
+  background-color: $lighter-grey;
+  text-align: center;
+  z-index: 20;
+}
+
+.report-post-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.report-post-text-input {
+  height: 100px;
+  width: 85%;
+  background-color: $light-grey;
+  padding: 1rem;
+  border: 1px solid $purple;
+  margin-top: 20px;
+  color: $dark-grey;
+  resize: none;
+}
+
+.report-post-char-amount {
+  margin-top: 5px;
+  text-align: right;
+  width: 90%;
+  color: $dark-grey;
+  font-size: 13px;
+}
+
+.report-post-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+.report-post-terms-wrapper {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.report-post-terms-text {
+  color: $dark-grey;
+  font-size: 13px;
+}

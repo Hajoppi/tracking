@@ -1,0 +1,6 @@
+node_modules/
+npm-debug.log
+public/*.jpg
+public/*.png
+public/*.PNG
+public/*.JPG

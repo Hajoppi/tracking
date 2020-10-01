@@ -1,0 +1,239 @@
+.profile-page {
+  padding: 5rem 2rem;
+
+  .randomize {
+    color: lighten($purple, 20%);
+    margin: 2px 5px 10px 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    align-self: flex-end;
+    text-decoration: underline;
+  }
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  background-color: $light-grey;
+  height: 300px;
+  border-radius: 30px;
+}
+
+.profile-card-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+
+  .data-label {
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    color: $purple;
+    margin-left: 0.5rem;
+  }
+
+  .data-field {
+    display: flex;
+    align-items: center;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 8px 18px;
+    border-radius: 30px;
+    grid-area: input;
+    border: 2px solid darken($light-grey, 5%);
+    background: $white;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: darken($light-grey, 25%);
+    }
+
+    &:disabled {
+      background-color: $light-grey;
+      color: $dark-grey;
+      border-color: $light-grey;
+    }
+  }
+
+  .status-message {
+    min-height: 50px;
+  }
+
+  .save-button {
+    align-self: flex-end;
+    justify-self: flex-end;
+  }
+}
+
+.profile-image {
+  align-self: center;
+  height: 75px;
+  width: 75px;
+  margin-top: -4rem;
+  padding: 2rem;
+  border-radius: 50%;
+  background-color: $light-grey;
+  background-size: cover;
+  background-image: url(https://st3.depositphotos.com/6672868/14376/v/450/depositphotos_143767633-stock-illustration-user-profile-group.jpg);
+  border: 5px solid $white;
+}
+.accordion-container {
+  margin-top: 1rem;
+}
+
+.accordion {
+  max-width: 400px;
+  font-family: Lato;
+  margin-bottom: 20px;
+  // background-color: $purple;
+  border-radius: 30px;
+  box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  @media only screen and (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.accordion .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $purple;
+
+  padding: 5px;
+  border-radius: 30px;
+  height: 3rem;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+
+  &.open {
+    border-radius: 30px 30px 0 0;
+  }
+}
+
+.large-accordion .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $purple;
+
+  padding: 0;
+  border-radius: 30px;
+  height: 11rem;
+  color: $white;
+  cursor: pointer;
+  text-align: center;
+
+  .profile-summary {
+    margin: 5px;
+
+    .at-icon {
+      position: relative;
+      top: 2px;
+      margin-right: -2px;
+      color: lighten($purple, 40%);
+    }
+
+    .profile-score {
+      font-size: 0.9rem;
+    }
+  }
+
+  &.open {
+    border-radius: 30px 30px 0 0;
+  }
+}
+
+.large-accordion .header-icon {
+  margin: 5px;
+  transform: rotate(0deg);
+  transition-duration: 0.3s;
+  justify-self: flex-end;
+}
+
+.accordion .body {
+  overflow: hidden;
+  background-color: $white;
+  transition: 150ms ease-out;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
+
+.accordion .body-inner {
+  padding: 1rem;
+  overflow-wrap: break-word;
+  text-align: initial;
+  margin-top: 0.5rem;
+}
+
+.accordion .header-icon.rotate {
+  transform: rotate(180deg);
+  transition-duration: 0.3s;
+}
+
+.guild-card {
+  display: flex;
+  flex-direction: row;
+  background-color: $white;
+  margin-bottom: 30px;
+  border-radius: 18px;
+  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+
+  .guild-header {
+    width: 60%;
+    border-top-left-radius: 18px;
+    border-bottom-left-radius: 18px;
+    padding: 10px;
+    padding-left: 20px;
+    background-color: $purple;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: $white;
+    border-right: 3px solid lighten($purple, 30%);
+    box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+  }
+  .guild-points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    border-top-right-radius: 18px;
+    border-bottom-right-radius: 18px;
+    padding: 10px;
+    padding-right: 20px;
+    background-color: $white;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    color: $black;
+  }
+
+  .guild-container {
+    padding: 25px;
+
+    .guild-points-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .guild-points {
+        display: flex;
+        flex-direction: column;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 0.8rem;
+
+        .points-value {
+          color: $purple;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}

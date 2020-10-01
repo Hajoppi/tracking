@@ -1,0 +1,177 @@
+.leaderboard {
+  text-align: center;
+
+  .navbar-backdrop {
+    margin-top: -3rem;
+    position: fixed;
+    width: 100%;
+    height: 3rem;
+    box-shadow: 0px -1px 3px 3px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+  }
+
+  .leaderboard-top {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 3;
+    padding: 0 2.5rem;
+    padding-bottom: 1rem;
+    background-color: $light-grey;
+    box-shadow: 0px -1px 3px 3px rgba(0, 0, 0, 0.1);
+
+    @media only screen and (min-width: $tablet) {
+      .radio-container {
+        max-width: 60%;
+      }
+    }
+
+    .leaderboard-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .radio-container {
+      display: flex;
+      width: 100%;
+      margin-top: 0.75rem;
+      flex-direction: column;
+      align-items: flex-start;
+      box-sizing: border-box;
+
+      .horizontal {
+        flex-direction: row;
+      }
+
+      .info-text {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        color: $dark-grey;
+        padding-bottom: 0.3rem;
+        text-align: left;
+      }
+
+      label {
+        display: flex;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 0.25rem;
+
+        span {
+          position: relative;
+          top: -1px;
+        }
+
+        input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0;
+        }
+
+        .radiobox {
+          margin-right: 0.75rem;
+          margin-top: 2px;
+          opacity: 1 !important;
+          width: 1rem;
+          height: 1rem;
+          border-radius: 50%;
+          background-color: darken($light-grey, 5%);
+          display: inline-block;
+          border: 2px solid darken($light-grey, 10%);
+        }
+
+        input:checked ~ .radiobox {
+          background-color: lighten($orange, 10%) !important;
+          transition: background-color 0.25s ease-in;
+          border: 2px solid $orange;
+        }
+      }
+    }
+  }
+
+  &-bg {
+    background-image: url('../images/color-x.png');
+    width: 100vw;
+    height: -webkit-fill-available;
+    position: absolute;
+    top: 300px;
+    opacity: 0.4;
+    z-index: -1;
+    background-size: cover;
+    background-repeat: repeat-y;
+    background-position: center;
+  }
+
+  .seperator {
+    height: 2px;
+    background-image: radial-gradient($orange, #fff),
+      radial-gradient($orange, #fff);
+    background-position: 0, 100%, 0, 100%;
+  }
+
+  .element-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    .element {
+      box-sizing: border-box;
+      padding: 1rem 0.75rem 1rem 0.5rem;
+      background-color: rgba(white, 0.95);
+      margin-bottom: 0.2rem;
+      box-shadow: 0px 1px 3px 3px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+
+      &:first-child {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+      }
+      &:last-child {
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+    }
+  }
+
+  h2 {
+    color: $orange;
+  }
+
+  .user-points {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rank {
+      font-size: 1.1rem;
+      min-width: 28px;
+    }
+
+    .user {
+      word-break: break-all;
+      font-size: 1.1rem;
+      padding: 0.5rem;
+    }
+
+    .user-score {
+      color: $white;
+      min-width: 4rem;
+      max-width: 4rem;
+      padding: 3px 10px;
+      font-size: 0.8rem;
+      border-radius: 1rem;
+      background-color: rgba($orange, 0.8);
+      font-weight: bold;
+    }
+  }
+}

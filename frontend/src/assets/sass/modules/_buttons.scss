@@ -1,0 +1,48 @@
+.btn {
+  border-radius: 2rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font-family: Value;
+  border: solid 1px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  background-color: transparent;
+  transition: all 0.35s ease-in-out;
+  padding: 12px 30px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: #ffffff18;
+  }
+
+  &.primary {
+    background-color: $purple;
+  }
+
+  &.outline {
+    border: 1px solid $purple;
+    color: $purple;
+  }
+
+  &:disabled {
+    background-color: $lighter-purple;
+    color: lighten($lighter-purple, 20%);
+    cursor: inherit;
+  }
+}
+
+.btn-dark {
+  @extend .btn;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:disabled {
+    color: #00000090;
+    cursor: inherit;
+  }
+}

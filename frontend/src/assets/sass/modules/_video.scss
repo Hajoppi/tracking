@@ -1,0 +1,65 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(#5d4e6f, 0.7);
+  z-index: 10;
+}
+.canvas {
+  min-height: 70%;
+  max-height: 70%;
+  margin-bottom: 1rem;
+}
+
+.feather-maximize {
+  color: $purple;
+  cursor: pointer;
+}
+
+.feather-x-circle {
+  cursor: pointer;
+}
+
+.success {
+  position: fixed;
+  left: 0;
+  right: 0;
+  text-align: center;
+  top: 10rem;
+  background-color: $green;
+  border-radius: 2rem;
+  color: white;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.4);
+  max-width: 25rem;
+  padding: 0.5rem;
+  margin: auto;
+
+  @media only screen and (max-width: $mobile) {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.qr-reader {
+  margin-top: 0.25rem;
+  .info-text,
+  .x-icon {
+    color: $white;
+  }
+
+  .error {
+    @extend .success;
+    background-color: $light-grey;
+    color: $orange;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

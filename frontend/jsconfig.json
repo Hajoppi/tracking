@@ -1,0 +1,13 @@
+{
+    "include": [
+      "./src/**/*", "service-worker.js"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "/*": [
+                "src/*"
+            ]
+        }
+    }
+}
